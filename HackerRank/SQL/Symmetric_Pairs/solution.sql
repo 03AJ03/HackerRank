@@ -1,0 +1,13 @@
+/*
+Enter your query here.
+*/
+SELECT 
+  CASE WHEN X <= Y THEN X ELSE Y END AS X,
+  CASE WHEN X <= Y THEN Y ELSE X END AS Y
+FROM Functions
+GROUP BY 
+  CASE WHEN X <= Y THEN X ELSE Y END,
+  CASE WHEN X <= Y THEN Y ELSE X END
+HAVING COUNT(*) > 1
+ORDER BY X;
+

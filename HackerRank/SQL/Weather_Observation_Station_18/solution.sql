@@ -1,0 +1,8 @@
+/*
+Enter your query here.
+*/
+SELECT ROUND(
+    (MAX(LAT_N) - MIN(LAT_N)) + (MAX(LONG_W) - MIN(LONG_W)),
+    4
+) AS MANHATTAN_DISTANCE
+FROM STATION;
