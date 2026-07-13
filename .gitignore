@@ -1,0 +1,17 @@
+# Exported data
+*.gz
+*.zip
+*.json
+
+# Python cache
+__pycache__/
+*.pyc
+
+# VS Code settings
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
