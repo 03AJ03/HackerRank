@@ -1,0 +1,29 @@
+name: HackerRank Auto Sync
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 * * * *"
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Sync HackerRank
+        env:
+          HACKERRANK_SESSION: ${{ secrets.HACKERRANK_SESSION }}
+        run: python scripts/hackerrank_sync.py
